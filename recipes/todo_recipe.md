@@ -69,14 +69,16 @@ todo.view_list # => ["Wash your hair"]
 # 6
 todo = ToDo.new
 todo.add("Take out the bins")
-todo.complete("Wash your hair") => "Error, no such task listed"
+todo.add("Wash your hair")
+todo.complete("Take out the bins")
+todo.complete("Wash your hair")
+todo.view_list # => []
 
 # 7
 todo = ToDo.new
 todo.add("Take out the bins")
-todo.add("Wash your hair")
-todo.complete("Take out the bins")
-todo.complete("Wash your hair")
+todo.complete("Wash your hair") => "Error, no such task listed"
+
 
 4. Implement the Behaviour
 
